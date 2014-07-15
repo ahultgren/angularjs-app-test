@@ -1,3 +1,4 @@
 node_modules
 public/dist
 public/js/config.js
+public/js/config.json

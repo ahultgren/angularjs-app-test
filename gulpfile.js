@@ -11,7 +11,7 @@ var sourcemaps = require('gulp-sourcemaps');
 
 
 var clientJsDir = 'public/js';
-var clientJsRoot = clientJsDir + '/main.js';
+var clientJsRoot = clientJsDir + '/app.js';
 var clientJsDest = 'public/dist';
 var clientJsMin = 'main.min.js';
 
