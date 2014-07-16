@@ -15,6 +15,8 @@ var clientJsRoot = clientJsDir + '/app.js';
 var clientJsDest = 'public/dist';
 var clientJsMin = 'main.min.js';
 
+var serverJsGlob = ['package.json', 'Letsfile.js', 'gulpfile.js'];
+
 var lessDir = 'public/less';
 var lessRoot = lessDir + '/main.less';
 var cssDest = 'public/dist';
@@ -26,10 +28,15 @@ gulp.task('lint', function() {
     .pipe(jshint())
     .on('error', handleError)
     .pipe(jshint.reporter('jshint-stylish'));
+
+  gulp.src(serverJsGlob)
+    .pipe(jshint())
+    .on('error', handleError)
+    .pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('browserify', function() {
-  var bundle = gulp.src(clientJsRoot)
+  gulp.src(clientJsRoot)
     .pipe(browserify())
     .on('error', handleError)
     .pipe(uglify())
@@ -51,6 +58,7 @@ gulp.task('less', function () {
 
 gulp.task('watch', function () {
   gulp.watch([clientJsDir + '/**/*.js'], ['build_js']);
+  gulp.watch(serverJsGlob, ['lint']);
   gulp.watch([lessDir + '/**/*.less'], ['build_css']);
 });
 

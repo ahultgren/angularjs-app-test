@@ -8,7 +8,10 @@
   },
   "author": "Andreas Hultgren",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "angular": "^1.2.19",
+    "angular-route": "^1.2.17-build.163.1",
+    "async": "^0.9.0",
     "gulp": "^3.8.6",
     "gulp-browserify": "^0.5.0",
     "gulp-jshint": "^1.7.1",
@@ -17,11 +20,11 @@
     "gulp-sourcemaps": "^1.0.0",
     "gulp-uglify": "^0.3.1",
     "gulp-util": "^2.2.20",
-    "jshint-stylish": "^0.4.0"
-  },
-  "dependencies": {
-    "angular": "^1.2.19",
-    "angular-route": "^1.2.17-build.163.1",
+    "jshint-stylish": "^0.4.0",
+    "lets": "0.0.10",
+    "lets-cli": "0.0.4",
+    "lets-git-pull": "0.0.5",
+    "lets-ssh": "0.0.3",
     "npm-angular-resource": "^1.3.0-build.2880"
   }
 }
