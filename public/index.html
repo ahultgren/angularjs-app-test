@@ -2,10 +2,16 @@
 <html ng-app="readerApp">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0" />
   <title>Articles</title>
   <script src="/dist/main.min.js"></script>
   <link rel="stylesheet" href="/dist/main.min.css">
 </head>
-<body ng-controller="ArticlesCtrl" ng-view>
+<body ng-controller="ArticlesCtrl">
+  <header class="site-header">
+    Article
+    <span>Reader</span>
+  </header>
+  <section class="main" ng-view></section>
 </body>
 </html>

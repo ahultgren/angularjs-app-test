@@ -2,16 +2,14 @@
   <h1>{{title}}</h1>
   <section class="content">
     <div ng-repeat="resource in resources" ng-switch="resource.type">
-      <div ng-switch-when="text" ng-bind-html="resource.text">
-      </div>
-      <div ng-switch-when="image">
-        <img ng-src="{{resource.baseUrl.replace('{transformation}', 'w_500')}}">
-      </div>
-      <div ng-switch-when="url">
-      </div>
-      <div ng-switch-default>
-        {{resource | json}}
-      </div>
+      <p ng-switch-when="text" ng-bind-html="resource.text">
+      </p>
+      <img ng-switch-when="image" ng-src="{{resource.baseUrl.replace('{transformation}', 'w_500')}}">
+      <p ng-switch-when="url">
+        <a href="{{resource.url}}">
+          {{resource.title}} ({{resource.source}})
+        </a>
+      </p>
     </div>
   </section>
 </article>
